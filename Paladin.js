@@ -4,7 +4,7 @@ class Paladin extends Character {
   };
 
   details = () => {
-    console.log("the Paladin can do some healing lightings that deals 4 dmg to the target and increase his hp by 5. It costs 40 mana.");
+    return "the Paladin can do some healing lightings that deals 4 dmg to the target and increase his hp by 5. It costs 40 mana.";
   };
 
   special = (victim) => {

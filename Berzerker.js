@@ -4,7 +4,7 @@ class Berzerker extends Character {
   };
 
   details = () => {
-    console.log("the Berzerker can increase its rage that increase his dmg by 1 but decrease its hp by 1.");
+    return "the Berzerker can increase its rage that increase his dmg by 1 but decrease its hp by 1.";
   };
 
   special = (victim) => {

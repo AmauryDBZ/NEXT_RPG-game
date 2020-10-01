@@ -5,7 +5,7 @@ class Fighter extends Character {
   };
 
   details = () => {
-    console.log("the Fighter can do dark vision hit that deals 5 dmg to the target. It allows the assassin to be protected by 2 hp for the next attacks. It costs 20 mana");
+    return "the Fighter can do dark vision hit that deals 5 dmg to the target. It allows the assassin to be protected by 2 hp for the next attacks. It costs 20 mana";
   };
 
   special = (victim) => {

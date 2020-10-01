@@ -5,7 +5,7 @@ class Assassin extends Character {
   };
 
   details = () => {
-    console.log("the Assassin can do a shadow hit that deals 7 dmg to the target, it costs 20 mana. It allows the assassin to be totally protected the next turn from any damages. If the victim doesn't dies, the assassin also gets -7 hp.");
+    return "the Assassin can do a shadow hit that deals 7 dmg to the target, it costs 20 mana. It allows the assassin to be totally protected the next turn from any damages. If the victim doesn't dies, the assassin also gets -7 hp.";
   };
 
   special = (victim) => {

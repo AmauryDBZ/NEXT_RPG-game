@@ -4,7 +4,7 @@ class Monk extends Character {
   };
 
   details = () => {
-    console.log("the Monk can heal him self by 8 hp, it costs 25 mana.");
+    return "the Monk can heal him self by 8 hp, it costs 25 mana.";
   };
 
   special = (victim) => {

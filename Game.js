@@ -15,6 +15,7 @@ class Game {
   };
 
   skipTurn = () => {
+    this.watchStats();
     this.turnLeft -= 1;
     this.isGameOver();
   };
@@ -67,10 +68,8 @@ class Game {
 
   startGame = () => {
     this.allPlayers();
-    console.log("welcome to this RPG game ! There are 10 turns");
-    console.log("at any time you can watch stats by pressing the space bar");
-    console.log("here are the players :")
-    console.log(this.characters);
+    this.displayGame("welcome to this RPG game ! There are 10 turns");
+    this.watchStats();
     while (this.gameOver === false) {
       this.startTurn();
     }
@@ -90,10 +89,18 @@ class Game {
   };
 
   watchStats = () => {
+    let stats = document.getElementById("stats");
+    stats.innerHTML = "";
     this.characters.map(player => {
-      console.log(`*********** ${player.name} is a ${player.constructor.name} **************`);
-      player.details();
-      console.log(`hp = ${player.hp}, mana = ${player.mana}, dmg = ${player.dmg}, protection = ${player.protection}`);
+      stats.innerHTML += `<br>*********** ${player.name} is a ${player.constructor.name} **************`;
+      stats.innerHTML += `<br> ${player.details()}`;
+      stats.innerHTML += `<br> hp = ${player.hp}, mana = ${player.mana}, dmg = ${player.dmg}, protection = ${player.protection}`;
+      stats.innerHTML += "<br> ----------------------------------------------------------------------";
     })
+  };
+
+  displayGame = (text) => {
+    let display = document.getElementById("game");
+    display.innerHTML += text;
   };
 }
