@@ -9,12 +9,12 @@ class Berzerker extends Character {
 
   special = (victim) => {
     if (this.hp > 1) {
-      console.log(`rage special feature ! ${this.name} has +1 dmg and -1 hp`);
+      game.displayGame(`<br>rage special feature ! ${this.name} has +1 dmg and -1 hp`);
       this.hp -= 1;
       this.dmg += 1;
       this.dealDamage(victim);
     } else {
-      console.log("insufficient hp, standard attack choosen")
+      game.displayGame("<br>insufficient hp, standard attack choosen")
       this.dealDamage(victim);
     }
   };

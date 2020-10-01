@@ -9,12 +9,12 @@ class Monk extends Character {
 
   special = (victim) => {
     if (this.mana >= 25) {
-      console.log(`heal special feature ! ${this.name} has +8 hp`);
-      console.log("it costs 25 mana");
+      game.displayGame(`<br>heal special feature ! ${this.name} has +8 hp`);
+      game.displayGame("<br>it costs 25 mana");
       this.hp += 8;
       this.mana -= 25;
     } else {
-      console.log("insufficient mana, standard attack choosen")
+      game.displayGame("<br>insufficient mana, standard attack choosen")
       this.dealDamage(victim);
     }
   };

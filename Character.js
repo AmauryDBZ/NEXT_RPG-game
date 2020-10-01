@@ -16,11 +16,11 @@ class Character {
 
   takeDamage = (x) => {
     this.hp -= x;
-    console.log(`${this.name} has got ${this.hp} lifepoints left.`);
+    game.displayGame(`<br>${this.name} has got ${this.hp} lifepoints left.`);
   };
 
   dealDamage = (victim) => {
-    console.log(`${this.name} is attacking ${victim.name} with ${this.dmg} damages`);
+    game.displayGame(`<br>${this.name} is attacking ${victim.name} with ${this.dmg} damages`);
     if (!isNaN(victim.protection)) {
       victim.isProtected(this.dmg);
     } else {
@@ -30,16 +30,16 @@ class Character {
 
   isProtected = (dmg) => {
     if (this.protection === true) {
-      console.log(`${this.name} do not get any damages, he is protected this turn`);
+      game.displayGame(`<br>${this.name} do not get any damages, he is protected this turn`);
     } else if (this.protection > 0) {
-      console.log(`${this.name} has a ${this.protection} hp protection`);
+      game.displayGame(`<br>${this.name} has a ${this.protection} hp protection`);
       if (this.protection - dmg < 0) {
-        console.log(`he looses his protection and ${dmg - this.protection} hp`);
+        game.displayGame(`<br>he looses his protection and ${dmg - this.protection} hp`);
         this.hp -= dmg - this.protection;
         this.protection = 0;
       } else {
         this.protection -= dmg;
-        console.log("he doesn't loose any hp");
+        game.displayGame("<br>he doesn't loose any hp");
       }
     }
   }

@@ -10,8 +10,8 @@ class Fighter extends Character {
 
   special = (victim) => {
     if (this.mana >= 20) {
-      console.log(`dark vision special feature ! ${victim.name} takes 5 damages and ${this.name} has a protection of 2 points for the next attack`);
-      console.log("it costs 20 mana")
+      game.displayGame(`<br>dark vision special feature ! ${victim.name} takes 5 damages and ${this.name} has a protection of 2 points for the next attack`);
+      game.displayGame("<br>it costs 20 mana")
       if (!isNaN(victim.protection)) {
         victim.isProtected(5);
       } else {
@@ -20,7 +20,7 @@ class Fighter extends Character {
       this.mana -= 20;
       this.protection += 2;
     } else {
-      console.log("insufficient mana, standard attack choosen")
+      game.displayGame("<br>insufficient mana, standard attack choosen")
       this.dealDamage(victim);
     }
   };
